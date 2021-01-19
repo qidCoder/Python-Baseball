@@ -11,5 +11,9 @@ game_files.sort()
 
 # Note: There are two sorting functions in Python. To sort in place use list.sort(), not sorted(list) which returns a new list.
 
+game_frames = []
+
 for game_file in game_files:
     game_frame = pd.read_csv(game_file, names = ['type', 'multi2', 'multi3', 'multi4', 'multi5', 'multi6', 'event'])
+
+    game_frames += game_frame
