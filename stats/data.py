@@ -36,3 +36,8 @@ identifiers.columns = ['game_id', 'year']
 games = pd.concat([games, identifiers], axis = 1, sort = False)
 
 games = games.fillna(' ')
+
+#To slightly reduce the memory used by the games DataFrame we can provide Pandas with a clue to what data is contained in certain columns.
+games.loc[:, 'type'] = pd.Categorical(games.loc[:, 'type'])
+
+print(games.head())
