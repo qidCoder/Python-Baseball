@@ -24,4 +24,4 @@ games = pd.concat(game_frames)
 #CLEAN UP DATA:
 #Use the loc[] function to select rows that have a value of ?? in the multi5 column in the games DataFrame.
 #Replace ?? with an empty string.
-games.loc['??', ['multi5']] = ''
+games.loc['??', 'multi5']
