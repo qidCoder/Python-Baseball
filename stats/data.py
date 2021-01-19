@@ -27,3 +27,12 @@ games = pd.concat(game_frames)
 games.loc[ games['multi5'] == '??', 'multi5'] = ''
 
 identifiers = games['multi2'].str.extract(r'(.LS(\d{4})\d{5})')#r stands for 'regular expression'
+
+identifiers = identifiers.fillna(method = 'ffill')
+
+#CHANGE COLUMN NAMES
+identifiers.columns = ['game_id', 'year']
+
+games = pd.concat([games, identifiers], axis = 1, sort = False)
+
+games = games.fillna(' ')
