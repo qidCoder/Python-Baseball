@@ -7,4 +7,6 @@ game_files = glob.glob(os.path.join(os.getcwd(), 'games', '*.EVE'))
 
 # To better prepare the game_files list for reading into pandas, sort it in place by calling sort().
 
+game_files.sort()
+
 # Note: There are two sorting functions in Python. To sort in place use list.sort(), not sorted(list) which returns a new list.
