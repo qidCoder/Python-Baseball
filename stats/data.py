@@ -17,3 +17,11 @@ for game_file in game_files:
     game_frame = pd.read_csv(game_file, names = ['type', 'multi2', 'multi3', 'multi4', 'multi5', 'multi6', 'event'])
 
     game_frames.append(game_frame)
+
+games = pd.concat(game_frames)
+#We now have a large DataFrame called games that contains all of the data from all of the event files.
+
+#CLEAN UP DATA:
+#Use the loc[] function to select rows that have a value of ?? in the multi5 column in the games DataFrame.
+#Replace ?? with an empty string.
+games.loc['??', ['multi5']] = ''
