@@ -4,4 +4,4 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from data import games
 
-attendance = 0
+attendance = games.loc[(games['multi2'] == 'attendance') & (games['type'] == 'info'), ['year', 'multi3']]
